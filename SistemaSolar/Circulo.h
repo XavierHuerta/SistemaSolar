@@ -13,6 +13,7 @@ private:
 	vector <Punto> resolucion;
 
 public:
+	Circulo();
 	Circulo(int, vector <int>);
 
 	//metodos

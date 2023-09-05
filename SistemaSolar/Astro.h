@@ -9,7 +9,7 @@ using namespace std;
 class Astro
 {
 protected:
-	Circulo skin;
+	Circulo skin(int, vector <int>);
 	int radio;
 	vector <int> pos;
 	vector <float> color;

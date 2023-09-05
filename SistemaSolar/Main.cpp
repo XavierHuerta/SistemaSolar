@@ -7,8 +7,8 @@
 //
 #include "Punto.h"
 #include "Circulo.h"
-//#include "Circulo.h"
-//
+#include "Astro.h"
+
 vector <int> pos = { 0,0,0 };
 //Punto p(pos);
 Circulo c(10, pos);
