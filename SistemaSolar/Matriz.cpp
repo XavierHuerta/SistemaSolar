@@ -21,4 +21,8 @@ void Matriz::opTraslacion() {
 
 }
 
+void Matriz::opRotacion() {
+
+}
+
 
