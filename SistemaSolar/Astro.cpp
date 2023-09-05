@@ -1,22 +1,22 @@
 #include "Astro.h"
 
 
-Circulo Astro::skin(int, vector<int>)
+Astro::Astro()
 {
-	return skin(radio, pos);
+
 }
 
+//Astro::Astro(int r, vector <int> locale, int fEscala, float a, vector <float> col) : Circulo() {
+//	pos = { 0,0,0 };
+//}
 
-Astro::Astro() {
-	pos = { 0,0,0 };
-}
-
-Astro::Astro(int r, vector <int> locale, int fEscala, float a, vector <float> col) {
-	pos = { 0,0,0 };
-}
+//Astro::Astro(vector<int> des, int fEscala, float a, vector<float> col) : ()
+//{
+//	
+//}
 
 void Astro::draw() {
-
+	skin.draw();
 }
 
 void Astro::update() {

@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <stack>
+#include <math.h>
 
 using namespace std;
 
@@ -20,9 +21,13 @@ private:
 public:
 	Matriz();
 	void loadIdentity();
-	void opTraslacion();
-	void opRotacion();
-	void opEscala();
+	void opTraslacion(vector <int>);
+	void opRotacion(float);
+	void opEscala(float);
 
+	//constructores de matrices
+	void cMT(float, float);
+	void cMR(float);
+	void cME(float);
 };
 

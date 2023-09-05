@@ -3,14 +3,16 @@
 #include <vector>
 
 #include "Circulo.h"
+#include "Astro.h"
 
 using namespace std;
 
 class Astro
 {
 protected:
-	Circulo skin(int, vector <int>);
+	Circulo skin;
 	int radio;
+	int desplazamiento;
 	vector <int> pos;
 	vector <float> color;
 
@@ -22,8 +24,11 @@ protected:
 	void update();
 
 public:
-	//Astro(radio, posicion, factor de escala, teta, color);
 	Astro();
+	//Astro(radio, posicion, factor de escala, teta, color);
 	Astro(int, vector <int>, int, float, vector <float>);
+
+	//Astro(deszplazamiento, factor de escala, teta, color);
+	Astro(vector <int>, int, float, vector <float>);
 };
 

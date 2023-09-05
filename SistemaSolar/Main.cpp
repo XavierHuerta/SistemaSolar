@@ -9,9 +9,11 @@
 #include "Circulo.h"
 #include "Astro.h"
 
-vector <int> pos = { 0,0,0 };
-//Punto p(pos);
-Circulo c(10, pos);
+//vector <int> pos = { 0,0,0 };
+//vector <float> rgb = {0.0,0.0,1.0};
+////Punto p(pos);
+//Circulo c(10, pos);
+//Astro sol(10, pos, 2, 0.0, rgb);
 
 //Inicializamoslas matrices
 void init(void) {
@@ -34,7 +36,8 @@ void funcion() {
 
     //p.draw();
 
-    c.draw();
+    //c.draw();
+    //sol.draw();
 
 
     //se usa para liberar el buffer grafico al display

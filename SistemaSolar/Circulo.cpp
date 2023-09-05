@@ -2,6 +2,12 @@
 
 #include <GL/glut.h>
 
+Circulo::Circulo(){
+	radio = 1;
+	centro = { 0,0,0 };
+	calcularPuntos();
+}
+
 
 Circulo::Circulo(int r_escalado, vector <int> c) {
 	radio = r_escalado;

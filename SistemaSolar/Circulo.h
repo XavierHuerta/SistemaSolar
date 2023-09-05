@@ -14,6 +14,7 @@ private:
 
 public:
 	Circulo();
+	Circulo(int);
 	Circulo(int, vector <int>);
 
 	//metodos
