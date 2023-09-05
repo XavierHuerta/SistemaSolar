@@ -22,6 +22,8 @@ protected:
 	void update();
 
 public:
+	//Astro(radio, posicion, factor de escala, teta, color);
 	Astro();
+	Astro(int, vector <int>, int, float, vector <float>);
 };
 
