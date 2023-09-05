@@ -6,6 +6,10 @@ Punto::Punto() {
 
 }
 
+Punto::Punto(int x, int y) {
+	coords = { x, y , 0 };
+}
+
 Punto::Punto(vector <int> cord) {
 	//cord debe ser un vector de 3 elementos
 	// 

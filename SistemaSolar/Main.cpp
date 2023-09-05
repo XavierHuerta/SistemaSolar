@@ -2,12 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <vector>
+
 //
-//#include "Punto.h"
+#include "Punto.h"
+#include "Circulo.h"
 //#include "Circulo.h"
 //
-//Punto p(0, 0);
-//Circulo c(50, 0, 0);
+vector <int> pos = { 0,0,0 };
+//Punto p(pos);
+Circulo c(10, pos);
 
 //Inicializamoslas matrices
 void init(void) {
@@ -26,11 +30,11 @@ void init(void) {
 void funcion() {
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0.0, 0.0, 1.0);
-    glPointSize(2);
+    //glPointSize(2);
 
     //p.draw();
 
-    //c.draw();
+    c.draw();
 
 
     //se usa para liberar el buffer grafico al display

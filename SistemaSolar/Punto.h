@@ -12,6 +12,7 @@ private:
 
 public:
 	Punto();
+	Punto(int , int);
 	Punto(vector <int>);
 
 	//metodos
