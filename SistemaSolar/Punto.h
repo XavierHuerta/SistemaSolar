@@ -8,19 +8,19 @@ using namespace std;
 class Punto
 {
 private:
-	vector <int> coords;
+	vector <float> coords;
 
 public:
 	Punto();
-	Punto(int , int);
-	Punto(vector <int>);
+	Punto(float , float);
+	Punto(vector <float>);
 
 	//metodos
 	void draw();
 	void update();
 
 	//set -/- get
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 };
 
