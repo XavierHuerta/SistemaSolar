@@ -4,12 +4,12 @@
 
 Circulo::Circulo(){
 	radio = 1;
-	centro = { 0,0,0 };
+	centro = { 0.0,0.0,0.0 };
 	calcularPuntos();
 }
 
 
-Circulo::Circulo(int r_escalado, vector <int> c) {
+Circulo::Circulo(float r_escalado, vector <float> c) {
 	radio = r_escalado;
 	centro.assign(c.begin(), c.end());
 	calcularPuntos();

@@ -12,7 +12,7 @@
 vector <float> pos = { 0.0,0.0,0.0 };
 //vector <float> rgb = {0.0,0.0,1.0};
 Punto p(pos);
-//Circulo c(10, pos);
+Circulo c(10, pos);
 //Astro sol(10, pos, 2, 0.0, rgb);
 
 //Inicializamoslas matrices
@@ -36,7 +36,7 @@ void funcion() {
 
     //p.draw();
 
-    //c.draw();
+    c.draw();
     //sol.draw();
 
 

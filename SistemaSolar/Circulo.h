@@ -9,13 +9,13 @@ class Circulo
 {
 private:
 	int radio;
-	vector <int> centro;
+	vector <float> centro;
 	vector <Punto> resolucion;
 
 public:
 	Circulo();
-	Circulo(int);
-	Circulo(int, vector <int>);
+	Circulo(float);
+	Circulo(float, vector <float>);
 
 	//metodos
 	void calcularPuntos();
