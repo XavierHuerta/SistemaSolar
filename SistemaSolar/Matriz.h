@@ -29,5 +29,7 @@ public:
 	void cMT(float, float);
 	void cMR(float);
 	void cME(float);
+
+	vector <vector <float>> multiplicaMatriz(vector <vector <float>>, vector <vector <float>>);
 };
 

@@ -52,3 +52,18 @@ void Matriz::cMR(float t) {
 			{      0      ,        0        , 1}};
 }
 
+
+vector<vector<float>> Matriz::multiplicaMatriz(vector<vector<float>> m1, vector<vector<float>> m2) {
+	vector<vector<float>> mr(3, vector<float>(3, 0.0));
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			for (int k = 0; k < 3; k++) {
+				mr[i][j] += m1[i][k] * m2[k][j];
+			}
+		}
+	}
+
+	return mr; // Devolver la matriz resultante
+}
+
