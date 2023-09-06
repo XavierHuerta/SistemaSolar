@@ -4,31 +4,29 @@
 
 #include "Circulo.h"
 #include "Astro.h"
+#include "Matriz.h"
 
 using namespace std;
 
 class Astro
 {
-protected:
+private:
 	Circulo skin;
 	int radio;
-	int desplazamiento;
-	vector <int> pos;
+	vector <float> desplazamiento;
+	vector <float> pos;
 	vector <float> color;
 
 	int facEscala;
 	float alfa;
+	float speed;
 	vector <vector <float>>* matrizModel;//referencia a la matriz a
+
+public:
+	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);
+	Astro(vector <float>, vector <float>, vector <float>, int, float, float, Matriz&);
 
 	void draw();
 	void update();
-
-public:
-	Astro();
-	//Astro(radio, posicion, factor de escala, teta, color);
-	Astro(int, vector <int>, int, float, vector <float>);
-
-	//Astro(deszplazamiento, factor de escala, teta, color);
-	Astro(vector <int>, int, float, vector <float>);
 };
 

@@ -7,13 +7,19 @@
 //
 #include "Punto.h"
 #include "Circulo.h"
+#include "Matriz.h"
 #include "Astro.h"
 
-vector <float> pos = { 0.0,0.0,0.0 };
-//vector <float> rgb = {0.0,0.0,1.0};
+vector <float> pos = { 0.0, 0.0, 0.0 };
+vector <float> des = { 0.0, 0.0, 0.0 };
+vector <float> rgb = { 1.0, 0.0, 0.0 };
 Punto p(pos);
 Circulo c(10, pos);
-//Astro sol(10, pos, 2, 0.0, rgb);
+
+Matriz m;
+//Astro sol(des, pos, rgb, 2, 0.0f, 0.0f, m);
+
+Astro sol(des, pos, rgb, 2, 0.0, 0.0, m);
 
 //Inicializamoslas matrices
 void init(void) {
@@ -36,7 +42,8 @@ void funcion() {
 
     //p.draw();
 
-    c.draw();
+    //c.draw();
+    sol.draw();
     //sol.draw();
 
 

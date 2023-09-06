@@ -33,5 +33,7 @@ public:
 	vector <vector <float>> multiplicaMatriz(vector <vector <float>>, vector <vector <float>>);
 
 	void clearM(vector <vector <float>>);
+
+	vector <vector <float>>* getA();
 };
 

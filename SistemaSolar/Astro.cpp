@@ -1,19 +1,23 @@
 #include "Astro.h"
 
 
-Astro::Astro()
+//Astro     (desplazamiendo ,    posicion    ,    color rgb   ,  facEscala ,  alfa  , velocidad, ref M_A);
+Astro::Astro(vector<float> d, vector<float> p, vector<float> c, int fEscala, float a,  float v , Matriz& mA)
 {
+	desplazamiento = d;
+	pos = p;
+	color = c;
+	facEscala = fEscala;
+	alfa = a;
+	speed = v;
+	matrizModel = mA.getA();
+	skin;
 
+	radio = 1 * facEscala;
+	
 }
 
-//Astro::Astro(int r, vector <int> locale, int fEscala, float a, vector <float> col) : Circulo() {
-//	pos = { 0,0,0 };
-//}
 
-//Astro::Astro(vector<int> des, int fEscala, float a, vector<float> col) : ()
-//{
-//	
-//}
 
 void Astro::draw() {
 	skin.draw();

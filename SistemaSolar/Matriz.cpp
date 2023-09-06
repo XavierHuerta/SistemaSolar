@@ -80,3 +80,7 @@ void Matriz::clearM(vector <vector <float>> m) {
 		 {0,0,0},
 		 {0,0,0}};
 }
+
+vector <vector <float>>* Matriz::getA() {
+	return &M_A;
+}
