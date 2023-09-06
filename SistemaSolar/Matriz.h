@@ -21,7 +21,7 @@ private:
 public:
 	Matriz();
 	void loadIdentity();
-	void opTraslacion(vector <int>);
+	void opTraslacion(vector <float>);
 	void opRotacion(float);
 	void opEscala(float);
 
@@ -31,5 +31,7 @@ public:
 	void cME(float);
 
 	vector <vector <float>> multiplicaMatriz(vector <vector <float>>, vector <vector <float>>);
+
+	void clearM(vector <vector <float>>);
 };
 
