@@ -8,6 +8,10 @@ Circulo::Circulo(){
 	calcularPuntos();
 }
 
+Circulo::Circulo(float fEscala) {
+	radio = fEscala;
+
+}
 
 Circulo::Circulo(float r_escalado, vector <float> c) {
 	radio = r_escalado;

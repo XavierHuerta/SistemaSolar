@@ -14,13 +14,13 @@ private:
 	Circulo skin;
 	int radio;
 	vector <float> desplazamiento;
-	vector <float> pos;
+	vector <float> pos; // posicion (x,y)
 	vector <float> color;
 
 	int facEscala;
 	float alfa;
 	float speed;
-	vector <vector <float>>* matrizModel;//referencia a la matriz a
+	Matriz* matrizModel;//referencia a la matriz a
 
 public:
 	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);

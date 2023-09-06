@@ -14,7 +14,9 @@ private:
 
 public:
 	Circulo();
+	//      radio
 	Circulo(float);
+	//     radio    coordenadas
 	Circulo(float, vector <float>);
 
 	//metodos

@@ -5,6 +5,9 @@ using namespace std;
 //constructor
 Matriz::Matriz() {
 	loadIdentity();
+	clearM(M_T);
+	clearM(M_R);
+	clearM(M_E);
 }
 
 //Metodos
@@ -17,6 +20,7 @@ void Matriz::loadIdentity() {
 	*/
 
 	M_A = { {1,0,0}, {0,1,0}, {0,0,1} };
+
 }
 
 //Realizan las operaciones entre las matrices
@@ -59,6 +63,15 @@ void Matriz::cMR(float t) {
 			{      0      ,        0        , 1}};
 }
 
+void Matriz::push() {
+	PilaE.push(M_A);
+}
+
+void Matriz::pop() {
+	M_A = PilaE.top();
+	PilaE.pop();
+}
+
 
 //recibe dos matrices y retorna la matriz producto de ellas
 vector<vector<float>> Matriz::multiplicaMatriz(vector<vector<float>> m1, vector<vector<float>> m2) {
@@ -76,9 +89,9 @@ vector<vector<float>> Matriz::multiplicaMatriz(vector<vector<float>> m1, vector<
 }
 
 void Matriz::clearM(vector <vector <float>> m) {
-	m = {{0,0,0},
-		 {0,0,0},
-		 {0,0,0}};
+	m = {{1,0,0},
+		 {0,1,0},
+		 {0,0,1}};
 }
 
 vector <vector <float>>* Matriz::getA() {

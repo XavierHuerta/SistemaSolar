@@ -19,7 +19,7 @@ Circulo c(10, pos);
 Matriz m;
 //Astro sol(des, pos, rgb, 2, 0.0f, 0.0f, m);
 
-Astro sol(des, pos, rgb, 2, 0.0, 0.0, m);
+Astro sol(des, pos, rgb, 100, 0.0, 0.0, m);
 
 //Inicializamoslas matrices
 void init(void) {
