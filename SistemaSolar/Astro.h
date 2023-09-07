@@ -20,7 +20,7 @@ private:
 	int facEscala;
 	float alfa;
 	float speed;
-	Matriz* matrizModel;//referencia a la matriz a
+	Matriz* matriz;//referencia a la matriz a
 
 public:
 	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);

@@ -11,15 +11,15 @@
 #include "Astro.h"
 
 vector <float> pos = { 0.0, 0.0, 0.0 };
-vector <float> des = { 0.0, 0.0, 0.0 };
+vector <float> des = { 10.0, 0.0, 0.0 };
 vector <float> rgb = { 1.0, 0.0, 0.0 };
 Punto p(pos);
 Circulo c(10, pos);
 
 Matriz m;
 //Astro sol(des, pos, rgb, 2, 0.0f, 0.0f, m);
-
-Astro sol(des, pos, rgb, 100, 0.0, 0.0, m);
+Punto p1(0,0);
+Astro sol(des, pos, rgb, 50, 0.0, 0.0, m);
 
 //Inicializamoslas matrices
 void init(void) {
@@ -40,11 +40,10 @@ void funcion() {
     glColor3f(0.0, 0.0, 1.0);
     //glPointSize(2);
 
-    //p.draw();
+    p1.draw();
 
     //c.draw();
     sol.draw();
-    //sol.draw();
 
 
     //se usa para liberar el buffer grafico al display

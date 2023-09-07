@@ -23,5 +23,16 @@ public:
 	void calcularPuntos();
 	void puntos(int, int, int, int);
 	void draw();
+	void uptade();
+
+	vector <Punto> getPuntos();
+	void setPuntos(vector <Punto>);
+	void setRadio(float);
+	float getRadio();
+	void setCentro(vector <float>);
+	vector <float> getCentro();
+
+	void printPoints();
+	void toString();
 };
 

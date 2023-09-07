@@ -22,5 +22,10 @@ public:
 	//set -/- get
 	float getX();
 	float getY();
+	float getK();
+	vector <float> getCoords();
+	void setCoords(vector <float>);
+
+	void toString();
 };
 

@@ -1,5 +1,7 @@
 #include "Matriz.h"
 
+#include <iostream>
+
 using namespace std;
 
 //constructor
@@ -72,6 +74,21 @@ void Matriz::pop() {
 	PilaE.pop();
 }
 
+vector <float> Matriz::multiplicaPunto( vector <float> v) {
+	// Crea el vector de resultado
+	vector<float> r(3);
+	vector <float> vAux = v;
+
+	// Realiza la multiplicación
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			r[i] += vAux[j] * M_A[i][j];
+		}
+	}
+
+	return r;
+}
+
 
 //recibe dos matrices y retorna la matriz producto de ellas
 vector<vector<float>> Matriz::multiplicaMatriz(vector<vector<float>> m1, vector<vector<float>> m2) {
@@ -96,4 +113,48 @@ void Matriz::clearM(vector <vector <float>> m) {
 
 vector <vector <float>>* Matriz::getA() {
 	return &M_A;
+}
+
+vector <vector <float>>* Matriz::getMT() {
+	return &M_T;
+}
+
+vector <vector <float>>* Matriz::getMR() {
+	return &M_R;
+}
+
+vector <vector <float>>* Matriz::getME() {
+	return &M_E;
+}
+
+
+void Matriz::printMatriz(vector <vector <float>>* m ){
+	vector <vector <float>> mAux = *m;
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << mAux.at(i).at(j) << " ";
+		}
+
+		cout << endl;
+	}
+}
+
+void Matriz::toString() {
+	cout << "Matriz Taslacion: " << endl;
+	printMatriz(&M_T);
+	cout << endl;
+
+	cout << "Matriz Rotaciom: " << endl;
+	printMatriz(&M_R);
+	cout << endl;
+
+	cout << "Matriz Escala: " << endl;
+	printMatriz(&M_E);
+	cout << endl;
+
+	cout << "Matriz A / Modelado: " << endl;
+	printMatriz(&M_A);
+	cout << endl;
+
 }

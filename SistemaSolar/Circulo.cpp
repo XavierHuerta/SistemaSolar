@@ -1,16 +1,18 @@
 #include "Circulo.h"
 
 #include <GL/glut.h>
+#include <iostream>
 
 Circulo::Circulo(){
 	radio = 1;
-	centro = { 0.0,0.0,0.0 };
+	centro = { 0.0,0.0,1.0 };
 	calcularPuntos();
 }
 
 Circulo::Circulo(float fEscala) {
 	radio = fEscala;
-
+	centro = { 0.0,0.0,0.0 };
+	calcularPuntos();
 }
 
 Circulo::Circulo(float r_escalado, vector <float> c) {
@@ -120,4 +122,47 @@ void Circulo::draw() {
 		glVertex2i(resolucion[i].getX(), resolucion[i].getY());
 	}
 	glEnd();
+}
+
+void Circulo::uptade() {
+	resolucion.clear();
+	calcularPuntos();
+}
+
+vector <Punto> Circulo::getPuntos() {
+	return resolucion;
+}
+
+void Circulo::setPuntos(vector <Punto> res) {
+	resolucion = res;
+}
+
+void Circulo::setRadio(float r) {
+	radio = r;
+}
+
+float Circulo::getRadio() {
+	return radio;
+}
+
+void Circulo::setCentro(vector <float> c) {
+	centro = c;
+}
+
+vector <float> Circulo::getCentro() {
+	return centro;
+}
+
+void Circulo::printPoints() {
+	cout << "Numero de Puntos" << resolucion.size() << endl;
+
+}
+
+void Circulo::toString() {
+	cout << endl;
+	cout << "Radio: " << radio << endl;
+	cout << "Coordenadas centro: " << endl;
+	cout << "x: " << centro.at(0) << " y: " << centro.at(1) << " k: " << centro.at(2) << endl;
+	cout << "Numero de Puntos: " << resolucion.size() << endl;
+	cout << endl;
 }

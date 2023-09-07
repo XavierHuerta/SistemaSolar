@@ -4,6 +4,8 @@
 #include <stack>
 #include <math.h>
 
+#include "Punto.h"
+
 using namespace std;
 
 class Matriz
@@ -36,11 +38,18 @@ public:
 	void push();
 	void pop();
 
-	void multiplicaPuntos();
+	vector <float> multiplicaPunto(vector <float>);
 
 	//devuelve el producto de 2 matrices 3x3
 	vector <vector <float>> multiplicaMatriz(vector <vector <float>>, vector <vector <float>>);
 	void clearM(vector <vector <float>>);// limpia una matriz
 	vector <vector <float>>* getA();//metodo get de la matriz A
+	vector <vector <float>>* getMT();//metodo get de la matriz A
+	vector <vector <float>>* getMR();//metodo get de la matriz A
+	vector <vector <float>>* getME();//metodo get de la matriz A
+
+	void printMatriz(vector <vector <float>>*);
+
+	void toString();
 };
 
