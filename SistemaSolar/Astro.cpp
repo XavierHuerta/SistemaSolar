@@ -9,7 +9,7 @@ using namespace std;
 
 
 //Astro     (desplazamiendo ,    posicion    ,    color rgb   ,  facEscala ,  alfa  , velocidad, ref M_A);
-Astro::Astro(vector<float> d, vector<float> p, vector<float> c, int fEscala, float a,  float v , Matriz& mA) : skin(p)
+Astro::Astro(vector<float> d, vector<float> p, vector<float> c, float fEscala, float a,  float v , Matriz& mA) : skin(p)
 {
 	desplazamiento = d;
 	pos = p;
@@ -29,7 +29,7 @@ Astro::Astro(vector<float> d, vector<float> p, vector<float> c, int fEscala, flo
 
 void Astro::draw() {
 	glColor3f(color.at(0), color.at(1), color.at(2));
-	matriz->push();//Push a ma matriz A
+	//matriz->push();//Push a ma matriz A
 
 	//Se calcula la matriz modelado
 	
@@ -73,6 +73,8 @@ void Astro::draw() {
 	// actualizamos los puntos del circulo
 	skin.uptade();
 
+	
+
 
 	//dibujamos los puntos
 	skin.draw();
@@ -81,7 +83,13 @@ void Astro::draw() {
 
 
 void Astro::update() {
-
+	if (alfa < 360) {
+		alfa += speed;
+	}
+	else
+	{
+		alfa = 0;
+	}
 }
 
 float Astro::nuevoRadio(Punto p) {
@@ -98,7 +106,7 @@ void Astro::toString() {
 	cout << "vector de desplazamiento: " << endl;
 	cout << "x: " << desplazamiento.at(0) << "   y: " << desplazamiento.at(1) << "   k: " << desplazamiento.at(2) << endl;
 	cout << "vector de Color: " << endl;
-	cout << "x: " << color.at(0) << "   y: " << color.at(1) << "   k: " << color.at(2) << endl;
+	cout << "R: " << color.at(0) << "   G: " << color.at(1) << "   B: " << color.at(2) << endl;
 	cout << "Factor de escala: " << facEscala << endl;
 	cout << "Angulo de rotacion: " << alfa << endl;
 	cout << "velocidad de moviemiento: " << speed << endl;

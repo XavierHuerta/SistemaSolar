@@ -17,7 +17,7 @@ private:
 	vector <float> pos; // posicion (x,y)
 	vector <float> color;
 
-	int facEscala;
+	float facEscala;
 	float alfa;
 	float speed;
 	Matriz* matriz;//referencia a la matriz a
@@ -26,7 +26,7 @@ private:
 
 public:
 	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);
-	Astro(vector <float>, vector <float>, vector <float>, int, float, float, Matriz&);
+	Astro(vector <float>, vector <float>, vector <float>, float, float, float, Matriz&);
 
 	void draw();
 	void update();

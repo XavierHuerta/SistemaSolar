@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 //
 #include "Punto.h"
@@ -17,14 +20,26 @@ vector <float> rgb = { 1.0, 0.0, 0.0 };
 
 //valores para la tierra
 vector <float> pos_T = { 0.0, 0.0, 1.0 };
-vector <float> des_T = { 0.5, 0.0, 0.0 };
-vector <float> rgb_T = { 0.0, 0.0, 1.0 };
+vector <float> des_T = { 1.75, 0.0, 0.0 };
+vector <float> rgb_T = { 0.0, 1.0, 0.0 };
+
+//valores para la luna 1
+vector <float> pos_L1 = { 0.0, 0.0, 1.0 };
+vector <float> des_L1 = { 2.0, 0.0, 0.0 };
+vector <float> rgb_L1 = { 0.0, 1.0, 1.0 };
+
+//valores para la luna 2
+vector <float> pos_L2 = { 0.0, 0.0, 1.0 };
+vector <float> des_L2 = { 2.0, 0.0, 0.0 };
+vector <float> rgb_L2 = { 1.0, 1.0, 1.0 };
 
 Matriz m;
 //Astro sol(des, pos, rgb, 1, 0.0f, 0.0f, m);
 Punto p1(0,0);
-Astro sol(des, pos, rgb, 10, 45.0, 0.0, m);
-Astro tierra(des_T, pos_T, rgb_T, 0.5, 45.0, 0.0, m);
+Astro sol(des, pos, rgb, 20.0, 0.0, 2.0, m);
+Astro tierra(des_T, pos_T, rgb_T, 0.15, 0.0, 1.0, m);
+Astro luna(des_L1, pos_L1, rgb_L1, 0.4, 0.0, 0.0, m);
+Astro luna2(des_L2, pos_L2, rgb_L2, 0.4, 180.0, 0.0, m);
 
 //Inicializamoslas matrices
 void init(void) {
@@ -45,10 +60,39 @@ void funcion() {
     //glColor3f(0.0, 0.0, 1.0);
 
     //c.draw();
-    sol.draw();
+    m.push();//guardamos A0
 
-    //tierra.draw();
+    sol.draw();//modifico
+    m.toString();
+    sol.toString();
+    cout << "play" << endl;
+    //m.push();//guardamos A1
+    m.pop();
 
+    //tierra.draw();//modifico
+    //m.toString();
+    //tierra.toString();
+    //m.push(); //guardamos A2
+
+    //luna.draw();//modifico
+    //m.toString();
+    //luna.toString();
+    //m.pop();// volvemos a A2
+    //
+    //luna2.draw();//modifico
+    //m.toString();
+    //luna2.toString();
+    //m.pop();// volvemos a A2
+    //m.pop(); //volvemos a A1
+    ////m.pop(); //volvemos a A0
+
+
+    //tierra.update();
+    sol.update();
+    
+    
+
+    /*-----------------------------------------*/
     glColor3f(0.0, 0.0, 1.0);
     glPointSize(2);
     p1.draw();
@@ -58,6 +102,7 @@ void funcion() {
     //se usa cuando solo se use un buffer grafico
     //Solo se debe usar 1 vez al final de la funcion que dibuja todo el entorno grafico
     glFlush();
+    glutPostRedisplay();
 }
 
 int main(int argc, char** argv) {
@@ -68,6 +113,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("Sistema Solar");
     init();
     glutDisplayFunc(funcion);
+    //glutIdleFunc(idle);
     glutMainLoop();
     return 0;
 }
