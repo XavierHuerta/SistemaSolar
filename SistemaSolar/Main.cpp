@@ -36,7 +36,7 @@ vector <float> rgb_L2 = { 1.0, 1.0, 1.0 };
 Matriz m;
 //Astro sol(des, pos, rgb, 1, 0.0f, 0.0f, m);
 Punto p1(0,0);
-Astro sol(des, pos, rgb, 20.0, 0.0, 2.0, m);
+Astro sol(des, pos, rgb, 20.0,90.0 * (3.14 / 180), 2.0, m);
 Astro tierra(des_T, pos_T, rgb_T, 0.15, 0.0, 1.0, m);
 Astro luna(des_L1, pos_L1, rgb_L1, 0.4, 0.0, 0.0, m);
 Astro luna2(des_L2, pos_L2, rgb_L2, 0.4, 180.0, 0.0, m);
@@ -61,34 +61,15 @@ void funcion() {
 
     //c.draw();
     m.push();//guardamos A0
-
     sol.draw();//modifico
     m.toString();
     sol.toString();
     cout << "play" << endl;
     //m.push();//guardamos A1
     m.pop();
+    m.toString();
 
-    //tierra.draw();//modifico
-    //m.toString();
-    //tierra.toString();
-    //m.push(); //guardamos A2
-
-    //luna.draw();//modifico
-    //m.toString();
-    //luna.toString();
-    //m.pop();// volvemos a A2
-    //
-    //luna2.draw();//modifico
-    //m.toString();
-    //luna2.toString();
-    //m.pop();// volvemos a A2
-    //m.pop(); //volvemos a A1
-    ////m.pop(); //volvemos a A0
-
-
-    //tierra.update();
-    sol.update();
+    
     
     
 
@@ -102,6 +83,12 @@ void funcion() {
     //se usa cuando solo se use un buffer grafico
     //Solo se debe usar 1 vez al final de la funcion que dibuja todo el entorno grafico
     glFlush();
+    //glutPostRedisplay();
+}
+
+static void idle(void)
+{
+    sol.update();
     glutPostRedisplay();
 }
 

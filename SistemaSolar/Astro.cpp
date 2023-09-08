@@ -66,7 +66,8 @@ void Astro::draw() {
 	skin.uptade();//actualizo el circulo
 
 	//calculamos el nuevo radio
-	float rNew = nuevoRadio(p);
+	float rNew = 0;
+	rNew = nuevoRadio(p);
 
 	//actualizamos el radio en el circulo
 	skin.setRadio(rNew);

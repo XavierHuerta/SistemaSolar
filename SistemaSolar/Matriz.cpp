@@ -72,6 +72,9 @@ void Matriz::push() {
 void Matriz::pop() {
 	M_A = PilaE.top();
 	PilaE.pop();
+	clearM(M_T);
+	clearM(M_R);
+	clearM(M_E);
 }
 
 //vector <float> Matriz::multiplicaPunto( vector <float> v) {
