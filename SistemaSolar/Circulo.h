@@ -13,7 +13,7 @@ private:
 	vector <Punto> resolucion;
 
 public:
-	Circulo();
+	Circulo(vector <float>);
 	//      radio
 	Circulo(float);
 	//     radio    coordenadas

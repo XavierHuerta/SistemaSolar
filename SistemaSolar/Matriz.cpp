@@ -74,15 +74,29 @@ void Matriz::pop() {
 	PilaE.pop();
 }
 
-vector <float> Matriz::multiplicaPunto( vector <float> v) {
+//vector <float> Matriz::multiplicaPunto( vector <float> v) {
+//	// Crea el vector de resultado
+//	vector<float> r(3);
+//	vector <float> vAux = v;
+//
+//	// Realiza la multiplicación
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 3; j++) {
+//			r[i] += vAux[j] * M_A[i][j];
+//		}
+//	}
+//
+//	return r;
+//}
+
+vector <float> Matriz::multiplicaPunto(vector <float> v) {
 	// Crea el vector de resultado
 	vector<float> r(3);
-	vector <float> vAux = v;
 
 	// Realiza la multiplicación
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			r[i] += vAux[j] * M_A[i][j];
+			r[i] += v[j] * M_A[i][j];
 		}
 	}
 

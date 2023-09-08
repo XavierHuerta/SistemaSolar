@@ -3,9 +3,9 @@
 #include <GL/glut.h>
 #include <iostream>
 
-Circulo::Circulo(){
+Circulo::Circulo(vector <float> origen){
 	radio = 1;
-	centro = { 0.0,0.0,1.0 };
+	centro = origen;
 	calcularPuntos();
 }
 
@@ -117,9 +117,10 @@ void Circulo::puntos(int cx, int cy, int x, int y) {
 
 void Circulo::draw() {
 	glBegin(GL_POINTS);
+	glVertex2f(centro.at(0), centro.at(1));
 	for (int i = 0; i < resolucion.size(); i++)
 	{
-		glVertex2i(resolucion[i].getX(), resolucion[i].getY());
+		glVertex2f(resolucion[i].getX(), resolucion[i].getY());
 	}
 	glEnd();
 }
@@ -160,6 +161,7 @@ void Circulo::printPoints() {
 
 void Circulo::toString() {
 	cout << endl;
+	cout << "---------- Circulo ----------" << endl;
 	cout << "Radio: " << radio << endl;
 	cout << "Coordenadas centro: " << endl;
 	cout << "x: " << centro.at(0) << " y: " << centro.at(1) << " k: " << centro.at(2) << endl;

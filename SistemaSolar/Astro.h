@@ -22,11 +22,15 @@ private:
 	float speed;
 	Matriz* matriz;//referencia a la matriz a
 
+	float nuevoRadio(Punto);
+
 public:
 	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);
 	Astro(vector <float>, vector <float>, vector <float>, int, float, float, Matriz&);
 
 	void draw();
 	void update();
+
+	void toString();
 };
 

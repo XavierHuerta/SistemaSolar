@@ -58,6 +58,7 @@ void Punto::setCoords(vector <float> v) {
 
 void Punto::toString() {
 	cout << endl;
+	cout << "### PUNTO ###" << endl;
 	cout << "Coordenadas: " << endl;
 	cout << "x: " << coords.at(0) << " y: " << coords.at(1) << " k: " << coords.at(2);
 	cout << endl;
