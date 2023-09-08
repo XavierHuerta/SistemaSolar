@@ -33,22 +33,9 @@ void Astro::draw() {
 
 	//Se calcula la matriz modelado
 	
-	
-	matriz->opTraslacion(desplazamiento);
 	matriz->opRotacion(alfa);
+	matriz->opTraslacion(desplazamiento);
 	matriz->opEscala(facEscala);
-	
-	
-	
-
-	matriz->toString();
-
-	/*
-	* multiplicamos el centro del circulo con la matriz A 
-	* para moverlo a su nueva ubicacion
-	*/
-
-	
 
 
 	/* Multiplicamos un punto del cirulo con la matriz modelado
@@ -59,38 +46,34 @@ void Astro::draw() {
 	
 	//extraemos el punto [0] de los puntos del circlo trasladado
 	Punto p = skin.getPuntos().at(0);
-	p.toString();
 
-	
 	//Multiplicamos el punto [0] del circulo por la amtriz modelado
 	vector <float> vAux = matriz->multiplicaPunto(p.getCoords());
 	p.setCoords(vAux);
-	p.toString();
+
+	/*
+	* multiplicamos el centro del circulo con la matriz A
+	* para moverlo a su nueva ubicacion
+	*/
 
 	Punto pC(pos);
-	pC.toString();
 	//calculamos nuevas coordenadas del centro del ciruclo
 	pC.setCoords(matriz->multiplicaPunto(pC.getCoords()));
-	pC.toString();
 
-	toString();
 	//guardamos nuevas coordenadas del centro en el circulo
 	pos = pC.getCoords();//actualizazo el centro del Astro
 	skin.setCentro(pC.getCoords());//actualizo el centro del circulo
 	skin.uptade();//actualizo el circulo
-	toString();
 
 	//calculamos el nuevo radio
 	float rNew = nuevoRadio(p);
-	cout << "nuevo radio: " << rNew << endl;
 
 	//actualizamos el radio en el circulo
-	//skin.toString();
 	skin.setRadio(rNew);
-	//skin.toString();
 	// actualizamos los puntos del circulo
 	skin.uptade();
-	//skin.toString();
+
+
 	//dibujamos los puntos
 	skin.draw();
 }
