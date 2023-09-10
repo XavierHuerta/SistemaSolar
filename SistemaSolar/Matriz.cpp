@@ -77,6 +77,13 @@ void Matriz::pop() {
 	clearM(M_E);
 }
 
+void Matriz::top() {
+	M_A = PilaE.top();
+	clearM(M_T);
+	clearM(M_R);
+	clearM(M_E);
+}
+
 //vector <float> Matriz::multiplicaPunto( vector <float> v) {
 //	// Crea el vector de resultado
 //	vector<float> r(3);
@@ -158,6 +165,7 @@ void Matriz::printMatriz(vector <vector <float>>* m ){
 }
 
 void Matriz::toString() {
+	cout << " <<<<<<<<<< MAtriz info >>>>>>>>>" << endl;
 	cout << "Matriz Taslacion: " << endl;
 	printMatriz(&M_T);
 	cout << endl;

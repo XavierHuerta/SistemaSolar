@@ -37,6 +37,7 @@ public:
 
 	void push();
 	void pop();
+	void top();
 
 	vector <float> multiplicaPunto(vector <float>);
 

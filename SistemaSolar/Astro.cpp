@@ -20,7 +20,7 @@ Astro::Astro(vector<float> d, vector<float> p, vector<float> c, float fEscala, f
 	matriz = &mA;
 	//skin(facEscala, p);
 
-	radio = 1 * facEscala;
+	//radio = 1;
 
 	//skin.
 	
@@ -29,14 +29,12 @@ Astro::Astro(vector<float> d, vector<float> p, vector<float> c, float fEscala, f
 
 void Astro::draw() {
 	glColor3f(color.at(0), color.at(1), color.at(2));
-	//matriz->push();//Push a ma matriz A
 
 	//Se calcula la matriz modelado
-	
 	matriz->opRotacion(alfa);
 	matriz->opTraslacion(desplazamiento);
 	matriz->opEscala(facEscala);
-
+	//matriz->toString();
 
 	/* Multiplicamos un punto del cirulo con la matriz modelado
 	* usamos las coordenadas del nuevo punto y con el centro del circulo 
@@ -46,7 +44,6 @@ void Astro::draw() {
 	
 	//extraemos el punto [0] de los puntos del circlo trasladado
 	Punto p = skin.getPuntos().at(0);
-
 	//Multiplicamos el punto [0] del circulo por la amtriz modelado
 	vector <float> vAux = matriz->multiplicaPunto(p.getCoords());
 	p.setCoords(vAux);
@@ -59,7 +56,6 @@ void Astro::draw() {
 	Punto pC(pos);
 	//calculamos nuevas coordenadas del centro del ciruclo
 	pC.setCoords(matriz->multiplicaPunto(pC.getCoords()));
-
 	//guardamos nuevas coordenadas del centro en el circulo
 	pos = pC.getCoords();//actualizazo el centro del Astro
 	skin.setCentro(pC.getCoords());//actualizo el centro del circulo
@@ -74,23 +70,33 @@ void Astro::draw() {
 	// actualizamos los puntos del circulo
 	skin.uptade();
 
-	
-
 
 	//dibujamos los puntos
 	skin.draw();
+	reinicio();
+	//update();
 }
 
 
-
 void Astro::update() {
+	//reinicio();
+
 	if (alfa < 360) {
-		alfa += speed;
+		alfa += speed * (3.14 / 180);
 	}
 	else
 	{
 		alfa = 0;
 	}
+}
+
+void Astro::reinicio() {
+	pos = { 0, 0, 1 };
+	skin.setCentro(pos);
+	//radio = 1;
+	skin.setRadio(1);
+	skin.uptade();
+	//skin.toString();
 }
 
 float Astro::nuevoRadio(Punto p) {

@@ -12,7 +12,7 @@ class Astro
 {
 private:
 	Circulo skin;
-	int radio;
+	//int radio;
 	vector <float> desplazamiento;
 	vector <float> pos; // posicion (x,y)
 	vector <float> color;
@@ -27,6 +27,8 @@ private:
 public:
 	//   desplazamiendo | posicion | color rgb | facEscala | alfa, velocidad, ref M_A);
 	Astro(vector <float>, vector <float>, vector <float>, float, float, float, Matriz&);
+
+	void reinicio();
 
 	void draw();
 	void update();
