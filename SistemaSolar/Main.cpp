@@ -42,8 +42,13 @@ vector <float> rgb_p2 = { 1.0, 1.0, 0.0 };
 
 //valores para la luna 1
 vector <float> pos_L3 = { 0.0, 0.0, 1.0 };
-vector <float> des_L3 = { 3.0, 0.0, 0.0 };
+vector <float> des_L3 = { 2.0, 0.0, 0.0 };
 vector <float> rgb_L3 = { 0.0, 1.0, 1.0 };
+
+//valores para p3
+vector <float> pos_p3 = { 0.0, 0.0, 1.0 };
+vector <float> des_p3 = { 1.5, 0.0, 0.0 };
+vector <float> rgb_p3 = { 1.0, 1.0, 1.0 };
 
 Matriz m;
 //Astro sol(des, pos, rgb, 1, 0.0f, 0.0f, m);
@@ -54,8 +59,10 @@ Astro p1(des_p1, pos_p1, rgb_p1, 0.25, 0.0, 5.0, m);
 Astro luna(des_L1, pos_L1, rgb_L1, 0.4, 0.0, 5.0, m);
 Astro luna2(des_L2, pos_L2, rgb_L2, 0.4, 180.0 * (3.14 / 180), 10.0, m);
 
-Astro p2(des_p2, pos_p2, rgb_p2, 0.25, 180.0 * (3.14 / 180), 5.0, m);
+Astro p2(des_p2, pos_p2, rgb_p2, 0.25, 45.0 * (3.14 / 180), 8.0, m);
 Astro luna3(des_L3, pos_L3, rgb_L3, 0.4, 0.0, 5.0, m);
+
+Astro p3(des_p3, pos_p3, rgb_p3, 0.25, 90.0 * (3.14 / 180), 2.0, m);
 
 
 //Inicializamoslas matrices
@@ -80,52 +87,33 @@ void funcion() {
 
     
     m.push();//matriz A_0
-
-    cout << "Matriz identidad: " << endl;
-    m.printMatriz(m.getA());
-
     sol.draw();//matriz A_1
-    cout << "Matriz de sol: " << endl;
-    m.printMatriz(m.getA());
-
     m.push();
-
-    p1.draw();//matriz A_2
-    cout << "Matriz de tierra: " << endl;
-    m.printMatriz(m.getA());
-
-    m.push();     
-    cout << "Matriz de sol: " << endl;
-    m.printMatriz(m.getA());
-
-    luna.draw();// matriz A_3
-    cout << "Matriz identidad: " << endl;
-    m.printMatriz(m.getA());
+    p3.draw();//matriz A_2
     m.top();
-
-    luna2.draw();//matriz A_4
-
-
+    p1.draw();//matriz A_3
+    m.push();     
+    luna.draw();// matriz A_4
+    m.top();
+    luna2.draw();//matriz A_5
     m.pop();
     m.pop();
-
-    p2.draw();
+    p2.draw();//matriz A_6
     m.push();
-
     luna3.draw();
     m.pop();
     m.pop();
-    p1.update();
-    luna.update();
-    luna2.update();
-    p2.update();
+
+    
     luna3.update();
+    p2.update();
+    luna2.update();
+    luna.update();
+    p1.update();
+    p3.update();
     sol.update();
     
 
-    
-    
-    
 
     /*-----------------------------------------*/
     glColor3f(0.0, 0.0, 1.0);
@@ -142,7 +130,7 @@ void funcion() {
 
 static void idle(void)
 {
-    Sleep(100);
+    Sleep(70);
     glutPostRedisplay();
 }
 
