@@ -9,7 +9,6 @@
 #include <math.h>
 using namespace std;
 
-//
 #include "Punto.h"
 #include "Circulo.h"
 #include "Matriz.h"
@@ -51,6 +50,7 @@ vector <float> des_p3 = { 1.5, 0.0, 0.0 };
 vector <float> rgb_p3 = { 1.0, 1.0, 1.0 };
 
 Matriz m;
+
 //Astro sol(des, pos, rgb, 1, 0.0f, 0.0f, m);
 Punto p(0,0);
 Astro sol(des, pos, rgb, 50.0,0.0 * ( 3.1415/ 180), 0.0, m);
@@ -82,9 +82,6 @@ void init(void) {
 
 void funcion() {
     glClear(GL_COLOR_BUFFER_BIT);
-
-
-
     
     m.push();//matriz A_0
     sol.draw();//matriz A_1
@@ -114,10 +111,8 @@ void funcion() {
     sol.update();
     
 
-
     /*-----------------------------------------*/
     glColor3f(0.0, 0.0, 1.0);
-    //glPointSize(2);
     p.draw();
 
 
@@ -125,7 +120,6 @@ void funcion() {
     //se usa cuando solo se use un buffer grafico
     //Solo se debe usar 1 vez al final de la funcion que dibuja todo el entorno grafico
     glFlush();
-    //glutPostRedisplay();
 }
 
 static void idle(void)

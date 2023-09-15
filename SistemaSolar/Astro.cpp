@@ -18,12 +18,6 @@ Astro::Astro(vector<float> d, vector<float> p, vector<float> c, float fEscala, f
 	alfa = a;
 	speed = v;
 	matriz = &mA;
-	//skin(facEscala, p);
-
-	//radio = 1;
-
-	//skin.
-	
 }
 
 
@@ -34,7 +28,6 @@ void Astro::draw() {
 	matriz->opRotacion(alfa);
 	matriz->opTraslacion(desplazamiento);
 	matriz->opEscala(facEscala);
-	//matriz->toString();
 
 	/* Multiplicamos un punto del cirulo con la matriz modelado
 	* usamos las coordenadas del nuevo punto y con el centro del circulo 
@@ -74,12 +67,10 @@ void Astro::draw() {
 	//dibujamos los puntos
 	skin.draw();
 	reinicio();
-	//update();
 }
 
 
 void Astro::update() {
-	//reinicio();
 
 	if (alfa < 360) {
 		alfa += speed * (3.14 / 180);
@@ -93,10 +84,8 @@ void Astro::update() {
 void Astro::reinicio() {
 	pos = { 0, 0, 1 };
 	skin.setCentro(pos);
-	//radio = 1;
 	skin.setRadio(1);
 	skin.uptade();
-	//skin.toString();
 }
 
 float Astro::nuevoRadio(Punto p) {
